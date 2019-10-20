@@ -23,7 +23,7 @@ def get_filters():
             print('Please enter a valid city name. Choices are Chicago, New York City, or Washington')
         else:
             break
-    
+
     # TO DO: get user input for month (all, january, february, ... , june)
     while True:
         month = input('Enter a month to explore. (all, January, February, ... , June) \n').lower()
@@ -56,7 +56,7 @@ def load_data(city, month, day):
     """
     # load data file into a dataframe
     df = pd.read_csv(CITY_DATA[city])
-    
+
     # convert the Start Time column to datetime
     df['Start Time'] = pd.to_datetime(df['Start Time'])
 
@@ -69,7 +69,6 @@ def load_data(city, month, day):
         # use the index of the months list to get the corresponding int
         months = ['january', 'february', 'march', 'april', 'may', 'june']
         month = months.index(month) + 1
-
         # filter by month to create the new dataframe
         df = df[df['month'] == month]
 
@@ -77,7 +76,6 @@ def load_data(city, month, day):
     if day != 'all':
         # filter by day of week to create the new dataframe
         df = df[df['day_of_week'] == day.title()]
-    
     return df
 
 
@@ -88,8 +86,6 @@ def time_stats(df):
     start_time = time.time()
 
     # TO DO: display the most common month
-    
-    
     popular_month = df['month'].mode()[0]
     print('Most Common Month:', popular_month)
 
@@ -125,7 +121,6 @@ def station_stats(df):
     common_combination = combination.value_counts().idxmax()
     frequent_start = common_combination.split(' to ')[0]
     frequent_end = common_combination.split(' to ')[1]
-    #combination_station = df.groupby(['Start Station', 'End Station']).count()
     print('\nMost Commonly used combination of start station and end station trip: \nStart station: {}\nEnd station:{}'.format(frequent_start,frequent_end))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
@@ -190,7 +185,7 @@ def raw_data(df):
             view_data = input('Would you like to view more raw data? Enter yes or no\n').lower()
         else:
             break
-            
+
 def main():
     while True:
         city, month, day = get_filters()
