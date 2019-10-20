@@ -15,7 +15,8 @@ major cities in the United States - Chicago, New York City, and Washington.
 
   * most common start station
   * most common end station
-  * most common trip from start to end (i.e., most frequent combination of start station and end station)
+  * most common trip from start to end (i.e., most frequent combination of start
+     station and end station)
 
 #3 Trip duration
 
@@ -26,7 +27,8 @@ major cities in the United States - Chicago, New York City, and Washington.
 
   * counts of each user type
   * counts of each gender (only available for NYC and Chicago)
-  * earliest, most recent, most common year of birth (only available for NYC and Chicago)
+  * earliest, most recent, most common year of birth (only available for NYC
+     and Chicago)
 
 ## Contents
   * bilkeshare.py - Python script to compute bikeshare statistics
