@@ -121,7 +121,6 @@ def station_stats(df):
     common_combination = combination.value_counts().idxmax()
     frequent_start = common_combination.split(' to ')[0]
     frequent_end = common_combination.split(' to ')[1]
-    #combination_station = df.groupby(['Start Station', 'End Station']).count()
     print('\nMost Commonly used combination of start station and end station trip: \nStart station: {}\nEnd station:{}'.format(frequent_start,frequent_end))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
